@@ -7,7 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="500" d:DesignWidth="1200">
     <UserControl.Resources>
-        <ResourceDictionary Source="pack://application:,,,/FilePicker;component/ButtonStyle.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/FilePicker;component/Views/ButtonStyle.xaml"/>
     </UserControl.Resources>
 
     <DockPanel>

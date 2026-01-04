@@ -1,0 +1,54 @@
+﻿<Window x:Class="FilePicker.MainWindow"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		xmlns:status="clr-namespace:FilePicker.Status"
+		xmlns:local="clr-namespace:FilePicker"
+		mc:Ignorable="d"
+		Title="File Picker" Height="550" Width="1280">
+
+	<Window.Resources>
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceDictionary Source="ButtonStyle.xaml"></ResourceDictionary>
+			</ResourceDictionary.MergedDictionaries>
+			<status:StatusToColorConverter x:Key="StatusToColorConverter" />
+		</ResourceDictionary>
+	</Window.Resources>
+
+	<Window.Background>
+		<LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+			<GradientStop Color="#9a75ff" Offset="1.0" />
+			<GradientStop Color="#c575ff" Offset="0.00" />
+		</LinearGradientBrush>
+	</Window.Background>
+	
+	<Grid>
+		<Grid.RowDefinitions>
+		<RowDefinition Height="Auto"/>
+		<RowDefinition Height="*"/>
+	</Grid.RowDefinitions>
+		<DockPanel Grid.Row="0" HorizontalAlignment="Stretch">
+			<Button DockPanel.Dock ="Left" Name="DefaultBtn" Click="DefaultView" IsEnabled="{Binding CanPlay}">
+				<Image Source="/Images/coo beak.png" Height="40"/>
+			</Button>
+			<Button DockPanel.Dock ="Left" Name="SettingsBtn" Click="SettingsView" IsEnabled="{Binding CanSettings}">
+				<Image Source="/Images/Settings.png" Height="40"/>
+			</Button>
+			<Button DockPanel.Dock ="Left" Name="ScanFiles" Click="Scan" IsEnabled="{Binding CanScan}">
+				<Image Source="/Images/Search.png" Height="35"/>
+			</Button>
+			<Button DockPanel.Dock ="Left" Name="Info" Click="HelpView">
+				<Image Source="/Images/Question.png" Height="40"/>
+			</Button>
+			<StackPanel Orientation="Vertical" DockPanel.Dock ="Right" VerticalAlignment="Top" Margin="0 0 10 0">
+				<Label Content="Application Status:" HorizontalAlignment="Right"/>
+				<Label FontSize="12pt" FontWeight="Bold" Margin="0 -10 0 0" Content="{Binding Status}" Foreground="{Binding Status, Converter={StaticResource StatusToColorConverter}}"/>
+			</StackPanel>
+			<Label Name="Spacer" />
+		</DockPanel>
+	<ContentControl x:Name="contentControl" Grid.Row="1"/>
+	</Grid>
+
+</Window>

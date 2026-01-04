@@ -38,7 +38,7 @@ namespace FilePicker
 
             this.Dispatcher.UnhandledException += OnDispatcherUnhandledException;
 
-            Settings = SettingsPersistence.LoadFromAppdata();
+            Settings = SettingsPersistence.Load();
 
             this.sqLiteService = new SqLiteService();
             this.data = sqLiteService.ReadData();
@@ -89,7 +89,7 @@ namespace FilePicker
             var s = new SettingsControl(this.Settings, fileCountResult, this.ApplicationStatus);
             s.Unloaded += (a, b) =>
             {
-                SettingsPersistence.StoreToAppdata(Settings);
+                SettingsPersistence.Store(Settings);
                 OnScanFinished -= (_, fcr) => s.SetAdditionalInfoTexts(fcr);
             };
             this.contentControl.Content = s;
@@ -99,7 +99,7 @@ namespace FilePicker
         private async void Scan(object sender, RoutedEventArgs e)
         {
             // button should be greyed out but check for safety.
-            this.Settings = SettingsPersistence.LoadFromAppdata();
+            this.Settings = SettingsPersistence.Load();
             var validatorResult = Validator.Validate(this.Settings);
             if (validatorResult.HasMainFilterError || validatorResult.HasPrevalenceFilterError)
             {

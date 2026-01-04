@@ -14,13 +14,21 @@
             <ListBox Name="Folders" ItemsSource="{Binding Folders}" MinHeight ="100" SelectionMode="Multiple"/>
             <Label Content="Rescan required" Name="TotalFileCountBeforeFilter" HorizontalContentAlignment="Center"/>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <Button Name="RemoveFolders" Content="✖" Margin="20" Click="RemoveFolders_Click"/>
-                <Button Name="AddFolder" Content="➕" Margin="20" Click="AddFolder_Click"/>
-            </StackPanel>
+				<Button Name="RemoveFolders" Margin="20" Click="RemoveFolders_Click">
+					<Image Source="/Images/Minus.png" Height="40"/>
+				</Button>
+				<Button Name="AddFolder" Margin="20" Click="AddFolder_Click">
+					<Image Source="/Images/Plus.png" Height="40"/>
+				</Button>
+			</StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <Button Name="StoreBtn" Content="💾" Margin="20" Click="Store_Click"/>
-                <Button Name="LoadBtn" Content="📂" Margin="20" Click="Load_Click"/>
-            </StackPanel>
+                <Button Name="StoreBtn" Margin="20" Click="Store_Click">
+					<Image Source="/Images/Save.png" Height="40"/>
+				</Button>
+				<Button Name="LoadBtn" Margin="20" Click="Load_Click">
+					<Image Source="/Images/Load.png" Height="40"/>
+				</Button>
+			</StackPanel>
         </StackPanel>
         <Rectangle VerticalAlignment="Stretch" Width="1" Margin="2" Stroke="Gray" />
         <!--2-->
