@@ -39,9 +39,8 @@
 						<!-- Disabled -->
 						<Trigger Property="IsEnabled" Value="False">
 							<Setter Property="BorderBrush" Value="Gray"/>
-							<Setter Property="Foreground" Value="Gray"/>
-							
-							<!-- button content: 50% desaturation + 50% opacity -->
+
+							<!-- button content: 50% opacity -->
 							<Setter TargetName="ContentPresenter" Property="Opacity" Value="0.5"/>
 							<Setter TargetName="ContentPresenter" Property="Effect">
 								<Setter.Value>

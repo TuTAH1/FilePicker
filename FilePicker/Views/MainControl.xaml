@@ -16,7 +16,7 @@
             <Button  Name="PlayBtn" Content="Play" Click="PlayBtn_OnClick" Width="188" Height="188" FontSize="48pt" BorderThickness="3px"/>
             <Button  Name="FwdBtn" Content="▼" Click="FwdBtn_OnClick" Width="69" Height="69" FontSize="24pt" BorderThickness="2px"/>
         </StackPanel>
-        <StackPanel Margin="10" DockPanel.Dock="Right">
+        <StackPanel Margin="10" DockPanel.Dock="Right" x:Name="sbCreatPlaylist">
             <Button  Name="VlcBtn" Content="📼" Click="Vlc_OnClick" Width="69" Height="69" FontSize="24pt" BorderThickness="2px" ToolTip="Generate VLC Playlist"/>
         </StackPanel>
         <StackPanel Orientation="Vertical" VerticalAlignment="Center">
@@ -60,7 +60,7 @@
                 <Label Margin="0 20 20 20" FontSize="18pt" FontWeight="Bold" Content="Current:"/>
                 <StackPanel Orientation="Vertical" VerticalAlignment="Center">
                     <Label FontWeight="Bold"  FontSize="14pt" Content="{Binding Current.Directory}"/>
-                    <Label FontWeight="Bold"  FontSize="14pt">
+                    <Label FontWeight="Bold"  FontSize="16pt">
                         <Label.Content>
                             <TextBlock>
                                 <TextBlock.Text>
@@ -96,7 +96,7 @@
                 <Label Margin="80 20 30 20" FontSize="10pt" FontWeight="Bold" Content="After:"/>
                 <StackPanel Orientation="Vertical" VerticalAlignment="Center">
                     <Label FontWeight="Bold"  FontSize="10pt" Content="{Binding NextNext.Directory}"/>
-                    <Label FontWeight="Bold"  FontSize="14pt">
+                    <Label FontWeight="Bold"  FontSize="12pt">
                         <Label.Content>
                             <TextBlock>
                                 <TextBlock.Text>
