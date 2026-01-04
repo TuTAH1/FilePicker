@@ -23,7 +23,7 @@
 			</StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                 <Button Name="StoreBtn" Margin="20" Click="Store_Click">
-					<Image Source="/Images/Save.png" Height="40"/>
+					<Image Source="/Images/Save filter settings.png" Height="40"/>
 				</Button>
 				<Button Name="LoadBtn" Margin="20" Click="Load_Click">
 					<Image Source="/Images/Load.png" Height="40"/>

@@ -6,6 +6,7 @@
 		xmlns:status="clr-namespace:FilePicker.Status"
 		xmlns:local="clr-namespace:FilePicker"
 		mc:Ignorable="d"
+		RenderOptions.BitmapScalingMode="HighQuality"
 		Title="File Picker" Height="550" Width="1280">
 
 	<Window.Resources>
@@ -34,7 +35,7 @@
 				<Image Source="/Images/coo beak.png" Height="40"/>
 			</Button>
 			<Button DockPanel.Dock ="Left" Name="SettingsBtn" Click="SettingsView" IsEnabled="{Binding CanSettings}">
-				<Image Source="/Images/Settings.png" Height="40"/>
+				<Image Source="/Images/Filter settings.png" Height="40"/>
 			</Button>
 			<Button DockPanel.Dock ="Left" Name="ScanFiles" Click="Scan" IsEnabled="{Binding CanScan}">
 				<Image Source="/Images/Search.png" Height="35"/>
